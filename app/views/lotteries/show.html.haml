@@ -1,0 +1,11 @@
+%h1 抽選「#{@lottery.name}」の詳細
+
+%p
+  名前
+  = @lottery.name
+%p
+  当選数
+  = @lottery.winners_count
+%p
+  抽選済
+  = @lottery.drawn? ? "済" : "未"

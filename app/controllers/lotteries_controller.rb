@@ -26,7 +26,7 @@ class LotteriesController < ApplicationController
   end
 
   def show
-    # TODO: implement
+    @lottery = Lottery.find(params[:id])
   end
 
   def destroy
