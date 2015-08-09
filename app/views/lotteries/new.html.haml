@@ -1,4 +1,4 @@
-%h1 新規抽選の登録
+%h1= t('terms.titles.new_target', target: Lottery.model_name.human)
 
 = form_for @lottery, url: lotteries_path do |f|
   %p
@@ -7,4 +7,4 @@
   %p
     = f.label :winners_count
     = f.number_field :winners_count
-  %p= f.submit
+  %p= f.submit t('terms.operations.create')

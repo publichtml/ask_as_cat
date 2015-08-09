@@ -1,0 +1,19 @@
+ja:
+  activerecord:
+    models:
+      lottery: 抽選
+    attributes:
+      lottery:
+        name: 名前
+        winners_count: 当選数
+        drawn: 抽選済
+  terms:
+    titles:
+      new_target: "%{target}の新規登録"
+      show_target: "%{model_name}「%{target}」の詳細"
+    operations:
+      create: 登録
+    choices:
+      drawn:
+        "true": 済
+        "false": 未
