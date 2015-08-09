@@ -4,11 +4,17 @@ class LotteriesController < ApplicationController
   end
 
   def new
-    # TODO: implement
+    @lottery = Lottery.new
   end
 
   def create
-    # TODO: implement
+    @lottery = Lottery.new(lottery_params)
+
+    if @lottery.save
+      redirect_to lottery_path(@lottery.id)
+    else
+      render :new
+    end
   end
 
   def edit
@@ -25,5 +31,11 @@ class LotteriesController < ApplicationController
 
   def destroy
     # TODO: implement
+  end
+
+  private
+
+  def lottery_params
+    params.require(:lottery).permit(:name, :winners_count)
   end
 end
