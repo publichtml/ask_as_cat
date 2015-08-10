@@ -9,3 +9,6 @@
 %p
   = Lottery.human_attribute_name :drawn
   = t("terms.choices.drawn.#{@lottery.drawn? ? 'true' : 'false'}")
+
+%p
+  = link_to t('terms.operations.edit'), edit_lottery_path(@lottery.id)

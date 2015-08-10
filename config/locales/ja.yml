@@ -15,6 +15,7 @@ ja:
       show_target: "%{model_name}「%{target}」の詳細"
     operations:
       create: 登録
+      edit: 編集
       update: 更新
     choices:
       drawn:
