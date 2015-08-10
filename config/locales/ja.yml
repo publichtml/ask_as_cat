@@ -7,6 +7,8 @@ ja:
         drawn: 抽選済
         name: 名前
         winners_count: 当選数
+  messages:
+    are_you_sure?: 削除してよろしいですか?
   terms:
     titles:
       edit_target: "%{model_name}「%{target}」の編集"
@@ -15,6 +17,7 @@ ja:
       show_target: "%{model_name}「%{target}」の詳細"
     operations:
       create: 登録
+      destroy: 削除
       edit: 編集
       update: 更新
     choices:

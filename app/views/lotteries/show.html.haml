@@ -12,3 +12,5 @@
 
 %p
   = link_to t('terms.operations.edit'), edit_lottery_path(@lottery.id)
+%p
+  = link_to t('terms.operations.destroy'), lottery_path(@lottery), method: :delete, data: { confirm: t('messages.are_you_sure?') }

@@ -1,5 +1,5 @@
 class LotteriesController < ApplicationController
-  before_action :set_lottery, only: [:edit, :update, :show]
+  before_action :set_lottery, only: [:edit, :update, :show, :destroy]
 
   def index
     @lotteries = Lottery.all
@@ -34,7 +34,8 @@ class LotteriesController < ApplicationController
   end
 
   def destroy
-    # TODO: implement
+    @lottery.destroy!
+    redirect_to lotteries_path
   end
 
   private
