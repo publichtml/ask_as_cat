@@ -1,0 +1,8 @@
+= form_for lottery, url: lotteries_path do |f|
+  %p
+    = f.label :name
+    = f.text_field :name
+  %p
+    = f.label :winners_count
+    = f.number_field :winners_count
+  %p= f.submit t('terms.operations.create')
