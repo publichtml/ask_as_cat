@@ -19,6 +19,7 @@ ja:
       create: 登録
       destroy: 削除
       edit: 編集
+      index: 一覧
       new: 新規登録
       update: 更新
     choices:
