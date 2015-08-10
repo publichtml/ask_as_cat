@@ -1,8 +1,9 @@
-= form_for lottery, url: lotteries_path do |f|
+- url = lottery.new_record? ? lotteries_path : lottery_path(lottery.id)
+= form_for lottery, url: url do |f|
   %p
     = f.label :name
     = f.text_field :name
   %p
     = f.label :winners_count
     = f.number_field :winners_count
-  %p= f.submit t('terms.operations.create')
+  %p= f.submit lottery.new_record? ? t('terms.operations.create') : t('terms.operations.update')

@@ -1,4 +1,6 @@
 class LotteriesController < ApplicationController
+  before_action :set_lottery, only: [:edit, :update, :show]
+
   def index
     # TODO: implement
   end
@@ -18,15 +20,17 @@ class LotteriesController < ApplicationController
   end
 
   def edit
-    # TODO: implement
   end
 
   def update
-    # TODO: implement
+    if @lottery.update(lottery_params)
+      redirect_to lottery_path(@lottery.id)
+    else
+      render :edit
+    end
   end
 
   def show
-    @lottery = Lottery.find(params[:id])
   end
 
   def destroy
@@ -37,5 +41,9 @@ class LotteriesController < ApplicationController
 
   def lottery_params
     params.require(:lottery).permit(:name, :winners_count)
+  end
+
+  def set_lottery
+    @lottery = Lottery.find(params[:id])
   end
 end
