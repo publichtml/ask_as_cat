@@ -2,7 +2,7 @@ class LotteriesController < ApplicationController
   before_action :set_lottery, only: [:edit, :update, :show]
 
   def index
-    # TODO: implement
+    @lotteries = Lottery.all
   end
 
   def new
