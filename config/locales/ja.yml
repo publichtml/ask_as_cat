@@ -9,7 +9,7 @@ ja:
         drawn: 抽選済
   terms:
     titles:
-      new_target: "%{target}の新規登録"
+      new_target: "%{model_name}の新規登録"
       edit_target: "%{model_name}「%{target}」の編集"
       show_target: "%{model_name}「%{target}」の詳細"
     operations:
