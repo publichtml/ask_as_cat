@@ -4,14 +4,14 @@ ja:
       lottery: 抽選
     attributes:
       lottery:
+        drawn: 抽選済
         name: 名前
         winners_count: 当選数
-        drawn: 抽選済
   terms:
     titles:
+      edit_target: "%{model_name}「%{target}」の編集"
       index: "%{model_name}の一覧"
       new_target: "%{model_name}の新規登録"
-      edit_target: "%{model_name}「%{target}」の編集"
       show_target: "%{model_name}「%{target}」の詳細"
     operations:
       create: 登録
