@@ -8,7 +8,7 @@
   %tbody
     - @lotteries.each do |lottery|
       %tr
-        %td= link_to lottery.name, lottery_path(lottery.id)
+        %td= link_to lottery.name, lottery_path(lottery)
         %td= lottery.winners_count
         %td= t("terms.choices.drawn.#{lottery.drawn? ? 'true' : 'false'}")
 

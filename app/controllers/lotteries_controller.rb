@@ -13,7 +13,7 @@ class LotteriesController < ApplicationController
     @lottery = Lottery.new(lottery_params)
 
     if @lottery.save
-      redirect_to lottery_path(@lottery.id)
+      redirect_to lottery_path(@lottery)
     else
       render :new
     end
@@ -24,7 +24,7 @@ class LotteriesController < ApplicationController
 
   def update
     if @lottery.update(lottery_params)
-      redirect_to lottery_path(@lottery.id)
+      redirect_to lottery_path(@lottery)
     else
       render :edit
     end

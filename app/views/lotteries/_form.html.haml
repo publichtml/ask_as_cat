@@ -1,4 +1,4 @@
-- url = lottery.new_record? ? lotteries_path : lottery_path(lottery.id)
+- url = lottery.new_record? ? lotteries_path : lottery_path(lottery)
 = form_for lottery, url: url do |f|
   %p
     = f.label :name
