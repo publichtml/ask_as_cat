@@ -12,3 +12,4 @@
         %td= lottery.winners_count
         %td= t("terms.choices.drawn.#{lottery.drawn? ? 'true' : 'false'}")
 
+%p= link_to t('terms.operations.new'), new_lottery_path
