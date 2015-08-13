@@ -1,0 +1,3 @@
+%h1= t('terms.titles.edit_target', model_name: Lottery.model_name.human, target: @lottery.name)
+
+= render partial: 'form', locals: { lottery: @lottery }

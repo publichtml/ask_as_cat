@@ -1,0 +1,14 @@
+- url = lottery.new_record? ? lotteries_path : lottery_path(lottery)
+= form_for lottery, url: url do |f|
+  - if lottery.errors.any?
+    %ul
+      - lottery.errors.full_messages.each do |message|
+        %li= message
+
+  %p
+    = f.label :name
+    = f.text_field :name
+  %p
+    = f.label :winners_count
+    = f.number_field :winners_count
+  %p= f.submit lottery.new_record? ? t('terms.operations.create') : t('terms.operations.update')
