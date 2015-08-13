@@ -1,4 +1,3 @@
 %nav.navbar.navbar-default
   .container-fluid
-    .navbar-header
-      .navbar-brand= t('app.name')
+    .navbar-header= link_to t('app.name'), root_path, class: 'navbar-brand'
