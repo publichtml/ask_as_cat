@@ -15,6 +15,7 @@ ja:
     titles:
       edit_target: "%{model_name}「%{target}」の編集"
       index: "%{model_name}の一覧"
+      lottery_office: 抽選所
       new_target: "%{model_name}の新規登録"
       show_target: "%{model_name}「%{target}」の詳細"
     operations:
