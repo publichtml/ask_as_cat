@@ -11,6 +11,7 @@ ja:
     name: Ask as cat
   messages:
     are_you_sure?: 削除してよろしいですか?
+    has_errors: エラーがあります。
   terms:
     titles:
       edit_target: "%{model_name}「%{target}」の編集"

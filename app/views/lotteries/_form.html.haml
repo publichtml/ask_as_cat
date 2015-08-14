@@ -2,9 +2,11 @@
   - url = lottery.new_record? ? lotteries_path : lottery_path(lottery)
   = form_for lottery, url: url do |f|
     - if lottery.errors.any?
-      %ul
-        - lottery.errors.full_messages.each do |message|
-          %li= message
+      .panel.panel-danger.form-errors
+        .panel-heading= t('messages.has_errors')
+        %ul.panel-body
+          - lottery.errors.full_messages.each do |message|
+            %li= message
 
     .form-group
       .col-md-2.label-wrapper= f.label :name
