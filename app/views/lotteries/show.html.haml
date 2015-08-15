@@ -17,3 +17,5 @@
   = link_to t('terms.operations.destroy'), lottery_path(@lottery), method: :delete, data: { confirm: t('messages.are_you_sure?') }
 %p
   = link_to t('terms.operations.index'), lotteries_path
+%p
+  = link_to t('terms.titles.index', model_name: Candidate.model_name.human), lottery_candidates_path(@lottery)

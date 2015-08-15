@@ -1,6 +1,7 @@
 ja:
   activerecord:
     models:
+      candidate: 候補
       lottery: 抽選
     attributes:
       lottery:
@@ -18,7 +19,9 @@ ja:
   terms:
     titles:
       edit_target: "%{model_name}「%{target}」の編集"
+      edit_target_of_parent: "%{parent}の%{model_name}の編集"
       index: "%{model_name}の一覧"
+      index_of_target_of_parent: "%{parent}の%{model_name}一覧"
       lottery_office: 抽選所
       new_target: "%{model_name}の新規登録"
       show_target: "%{model_name}「%{target}」の詳細"

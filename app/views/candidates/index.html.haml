@@ -1,0 +1,2 @@
+%h1= t('terms.titles.index_of_target_of_parent', model_name: Candidate.model_name.human, parent: @lottery.name)
+%p= link_to t('terms.operations.edit'), lottery_candidates_edit_path(@lottery)
