@@ -1,6 +1,7 @@
 %nav.navbar.navbar-default
   .container-fluid
-    .navbar-header= link_to t('app.name'), root_path, class: 'navbar-brand'
+    .navbar-header
+      = link_to fa_icon('paw') + t('app.name'), root_path, class: 'navbar-brand'
     .collapse.navbar-collapse
       %ul.nav.navbar-nav
         %li= link_to t('terms.titles.lottery_office'), lotteries_path
