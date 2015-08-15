@@ -2,7 +2,6 @@ class CandidatesController < ApplicationController
   before_action :set_lottery
 
   def index
-    # TODO: implement
   end
 
   def edit
