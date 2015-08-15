@@ -4,6 +4,10 @@ ja:
       candidate: 候補
       lottery: 抽選
     attributes:
+      candidate:
+        name: 名前
+        number: No.
+        weight: 当たりやすさ
       lottery:
         drawn: 抽選済
         name: 名前
@@ -36,3 +40,6 @@ ja:
       drawn:
         "true": 済
         "false": 未
+      weight:
+        1: ふつう
+        2: 当たりやすい

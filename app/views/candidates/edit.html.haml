@@ -1,1 +1,18 @@
 %h1= t('terms.titles.edit_target_of_parent', model_name: Candidate.model_name.human, parent: @lottery.name)
+
+.form-wrapper
+  = form_for @lottery, url: lottery_candidates_path, method: :put do |f|
+    %table.table.table-striped
+      %thead
+        %th= Candidate.human_attribute_name :number
+        %th= Candidate.human_attribute_name :name
+        %th= Candidate.human_attribute_name :weight
+      %tbody
+        - index = 1
+        = f.fields_for :candidates do |candidate|
+          %tr
+            %th= index
+            %td= candidate.text_field :name, class: 'form-control'
+            %td= candidate.select :weight, t('terms.choices.weight').invert, {}, { class: 'form-control' }
+            - index += 1
+    .col-md-12= f.submit t('terms.operations.update'), class: 'btn btn-primary pull-right'

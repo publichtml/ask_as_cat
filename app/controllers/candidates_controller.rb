@@ -6,7 +6,7 @@ class CandidatesController < ApplicationController
   end
 
   def edit
-    # TODO: implement
+    10.times { @lottery.candidates.build }
   end
 
   private
