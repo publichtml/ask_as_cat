@@ -36,6 +36,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 gem 'haml-rails'
+gem 'font-awesome-rails'
 
 group :development, :test do
   gem 'pry-rails'
