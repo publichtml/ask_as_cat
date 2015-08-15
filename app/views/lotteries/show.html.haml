@@ -1,14 +1,15 @@
 %h1= t('terms.titles.show_target', model_name: Lottery.model_name.human, target: @lottery.name)
 
-%p
-  = Lottery.human_attribute_name :name
-  = @lottery.name
-%p
-  = Lottery.human_attribute_name :winners_count
-  = @lottery.winners_count
-%p
-  = Lottery.human_attribute_name :drawn
-  = t("terms.choices.drawn.#{@lottery.drawn? ? 'true' : 'false'}")
+.items-wrapper
+  .item-group
+    .col-md-2.title= Lottery.human_attribute_name :name
+    .col-md-10= @lottery.name
+  .item-group
+    .col-md-2.title= Lottery.human_attribute_name :winners_count
+    .col-md-10= @lottery.winners_count
+  .item-group
+    .col-md-2.title= Lottery.human_attribute_name :drawn
+    .col-md-10= t("terms.choices.drawn.#{@lottery.drawn? ? 'true' : 'false'}")
 
 %p
   = link_to t('terms.operations.edit'), edit_lottery_path(@lottery)
