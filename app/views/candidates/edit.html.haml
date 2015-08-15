@@ -2,6 +2,13 @@
 
 .form-wrapper
   = form_for @lottery, url: lottery_candidates_path, method: :put do |f|
+    - if @lottery.errors.any?
+      .panel.panel-danger.form-errors
+        .panel-heading= t('messages.has_errors')
+        %ul.panel-body
+          - @lottery.errors.full_messages.each do |message|
+            %li= message
+
     %table.table.table-striped
       %thead
         %th= Candidate.human_attribute_name :number
@@ -13,6 +20,6 @@
           %tr
             %th= index
             %td= candidate.text_field :name, class: 'form-control'
-            %td= candidate.select :weight, t('terms.choices.weight').invert, {}, { class: 'form-control' }
+            %td= candidate.select :weight, Candidate.weight_choices, {}, { class: 'form-control' }
             - index += 1
     .col-md-12= f.submit t('terms.operations.update'), class: 'btn btn-primary pull-right'

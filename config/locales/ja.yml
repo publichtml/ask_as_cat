@@ -12,6 +12,9 @@ ja:
         drawn: 抽選済
         name: 名前
         winners_count: 当選数
+      lottery/candidates:
+        name: 名前
+        weight: 当たりやすさ
   app:
     name: Ask as cat
   messages:
