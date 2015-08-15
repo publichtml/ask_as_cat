@@ -13,7 +13,7 @@ class LotteriesController < ApplicationController
     @lottery = Lottery.new(lottery_params)
 
     if @lottery.save
-      redirect_to lottery_path(@lottery)
+      redirect_to lottery_path(@lottery), notice: I18n.t('messages.created')
     else
       render :new
     end
@@ -24,7 +24,7 @@ class LotteriesController < ApplicationController
 
   def update
     if @lottery.update(lottery_params)
-      redirect_to lottery_path(@lottery)
+      redirect_to lottery_path(@lottery), notice: I18n.t('messages.updated')
     else
       render :edit
     end
@@ -35,7 +35,7 @@ class LotteriesController < ApplicationController
 
   def destroy
     @lottery.destroy!
-    redirect_to lotteries_path
+    redirect_to lotteries_path, notice: I18n.t('messages.destroyed')
   end
 
   private

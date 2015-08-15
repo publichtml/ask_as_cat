@@ -1,0 +1,5 @@
+- flash.each do |type, message|
+  - css_class = case type
+    - when 'notice'; 'alert-success'
+    - else; 'alert-danger'
+  .alert{ class: css_class }= simple_format(message)
