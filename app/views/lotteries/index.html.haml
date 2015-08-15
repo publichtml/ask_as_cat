@@ -1,15 +1,16 @@
-%h1= t('terms.titles.index', model_name: Lottery.model_name.human)
+%h1= t('terms.titles.lottery_office')
 
-%table
-  %thead
-    %th= Lottery.human_attribute_name :name
-    %th= Lottery.human_attribute_name :winners_count
-    %th= Lottery.human_attribute_name :drawn
-  %tbody
-    - @lotteries.each do |lottery|
-      %tr
-        %td= link_to lottery.name, lottery_path(lottery)
-        %td= lottery.winners_count
-        %td= t("terms.choices.drawn.#{lottery.drawn? ? 'true' : 'false'}")
+.vertical-wrapper
+  %table.table.table-striped
+    %thead
+      %th= Lottery.human_attribute_name :name
+      %th= Lottery.human_attribute_name :winners_count
+      %th= Lottery.human_attribute_name :drawn
+    %tbody
+      - @lotteries.each do |lottery|
+        %tr
+          %td= link_to lottery.name, lottery_path(lottery)
+          %td= lottery.winners_count
+          %td= t("terms.choices.drawn.#{lottery.drawn? ? 'true' : 'false'}")
 
-%p= link_to t('terms.operations.new'), new_lottery_path
+  %p= link_to t('terms.operations.new'), new_lottery_path

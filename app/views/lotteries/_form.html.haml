@@ -1,14 +1,18 @@
-- url = lottery.new_record? ? lotteries_path : lottery_path(lottery)
-= form_for lottery, url: url do |f|
-  - if lottery.errors.any?
-    %ul
-      - lottery.errors.full_messages.each do |message|
-        %li= message
+.form-wrapper
+  - url = lottery.new_record? ? lotteries_path : lottery_path(lottery)
+  = form_for lottery, url: url do |f|
+    - if lottery.errors.any?
+      .panel.panel-danger.form-errors
+        .panel-heading= t('messages.has_errors')
+        %ul.panel-body
+          - lottery.errors.full_messages.each do |message|
+            %li= message
 
-  %p
-    = f.label :name
-    = f.text_field :name
-  %p
-    = f.label :winners_count
-    = f.number_field :winners_count
-  %p= f.submit lottery.new_record? ? t('terms.operations.create') : t('terms.operations.update')
+    .form-group
+      .col-md-2.label-wrapper= f.label :name
+      .col-md-10= f.text_field :name, class: 'form-control'
+    .form-group
+      .col-md-2.label-wrapper= f.label :winners_count
+      .col-md-10= f.number_field :winners_count, class: 'form-control'
+    .col-md-12
+      = f.submit lottery.new_record? ? t('terms.operations.create') : t('terms.operations.update'), class: 'btn btn-primary pull-right'

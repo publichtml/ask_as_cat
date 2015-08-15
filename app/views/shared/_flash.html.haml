@@ -1,0 +1,7 @@
+- flash.each do |type, message|
+  - css_class = case type
+    - when 'notice'; 'alert-success'
+    - else; 'alert-danger'
+  .alert.alert-dismissible{ class: css_class }
+    %button.close{ data: { dismiss: 'alert' }, 'aria-label': 'Close' } &times;
+    = simple_format(message)
