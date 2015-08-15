@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150809105744) do
+ActiveRecord::Schema.define(version: 20150815100829) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "candidates", force: :cascade do |t|
+    t.string   "name",       limit: 255,                 null: false
+    t.boolean  "winner",                 default: false, null: false
+    t.integer  "weight",                 default: 1,     null: false
+    t.integer  "lottery_id",                             null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+  end
 
   create_table "lotteries", force: :cascade do |t|
     t.string   "name",                          null: false
