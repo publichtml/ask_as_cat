@@ -2,12 +2,7 @@
 
 .form-wrapper
   = form_for @lottery, url: lottery_candidates_path, method: :put do |f|
-    - if @lottery.errors.any?
-      .panel.panel-danger.form-errors
-        .panel-heading= t('messages.has_errors')
-        %ul.panel-body
-          - @lottery.errors.full_messages.each do |message|
-            %li= message
+    = render partial: 'shared/validation_errors', locals: { object: @lottery }
 
     %table.table.table-striped
       %thead
