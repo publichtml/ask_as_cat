@@ -19,7 +19,7 @@ class CandidatesController < ApplicationController
   private
 
   def candidates_params
-    params.require(:lottery).permit(candidates_attributes: [:id, :name, :weight])
+    params.require(:lottery).permit(candidates_attributes: [:id, :name, :weight, :_destroy])
   end
 
   def set_lottery
