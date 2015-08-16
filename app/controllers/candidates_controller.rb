@@ -5,13 +5,14 @@ class CandidatesController < ApplicationController
   end
 
   def edit
-    10.times { @lottery.candidates.build }
+    build_new_candidates
   end
 
   def update
     if @lottery.update(candidates_params)
       redirect_to lottery_candidates_path(lottery: @lottery), notice: I18n.t('messages.updated')
     else
+      build_new_candidates
       render :edit
     end
   end
@@ -24,5 +25,9 @@ class CandidatesController < ApplicationController
 
   def set_lottery
     @lottery = Lottery.find(params[:lottery_id])
+  end
+
+  def build_new_candidates
+    10.times { @lottery.candidates.build }
   end
 end
