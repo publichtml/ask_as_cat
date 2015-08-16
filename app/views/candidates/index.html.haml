@@ -7,12 +7,10 @@
       %th= Candidate.human_attribute_name :name
       %th= Candidate.human_attribute_name :weight
     %tbody
-      - index = 1
-      - @lottery.candidates.each do |candidate|
+      - @lottery.candidates.each.with_index(1) do |candidate, index|
         %tr
           %th= index
           %td= candidate.name
           %td= candidate.human_weight
-          - index += 1
 
 %p= link_to t('terms.operations.edit'), lottery_candidates_edit_path(@lottery)
