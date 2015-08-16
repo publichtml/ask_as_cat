@@ -3,7 +3,7 @@ class Candidate < ActiveRecord::Base
 
   default_scope { order(:id) }
 
-  validates :name, presence: true, length: { maximum: 255 }
+  validates :name, presence: true, length: { maximum: 255 }, uniqueness: { scope: [:lottery_id] }
   validates :weight, presence: true, inclusion: { in: WEIGHTS }
 
   class << self
