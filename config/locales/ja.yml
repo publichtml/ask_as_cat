@@ -1,12 +1,20 @@
 ja:
   activerecord:
     models:
+      candidate: 候補
       lottery: 抽選
     attributes:
+      candidate:
+        name: 名前
+        number: No.
+        weight: 当たりやすさ
       lottery:
         drawn: 抽選済
         name: 名前
         winners_count: 当選数
+      lottery/candidates:
+        name: 名前
+        weight: 当たりやすさ
   app:
     name: Ask as cat
   messages:
@@ -18,7 +26,9 @@ ja:
   terms:
     titles:
       edit_target: "%{model_name}「%{target}」の編集"
+      edit_target_of_parent: "%{parent}の%{model_name}の編集"
       index: "%{model_name}の一覧"
+      index_of_target_of_parent: "%{parent}の%{model_name}一覧"
       lottery_office: 抽選所
       new_target: "%{model_name}の新規登録"
       show_target: "%{model_name}「%{target}」の詳細"
@@ -33,3 +43,6 @@ ja:
       drawn:
         "true": 済
         "false": 未
+      weight:
+        1: ふつう
+        2: 当たりやすい
