@@ -3,10 +3,13 @@ class Candidate < ActiveRecord::Base
 
   belongs_to :lottery
 
-  default_scope { order(:id) }
 
   validates :name, presence: true, length: { maximum: 255 }, uniqueness: { scope: [:lottery_id] }
   validates :weight, presence: true, inclusion: { in: WEIGHTS }
+
+  default_scope { order(:id) }
+
+  scope :winners, -> { where(winner: true) }
 
   class << self
     def human_weight(weight)
