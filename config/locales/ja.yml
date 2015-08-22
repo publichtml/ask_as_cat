@@ -9,6 +9,7 @@ ja:
         number: No.
         weight: 当たりやすさ
       lottery:
+        candidates_count: 候補者数
         drawn: 抽選済
         name: 名前
         winners_count: 当選数

@@ -8,6 +8,9 @@
     .col-md-2.title= Lottery.human_attribute_name :winners_count
     .col-md-10= @lottery.winners_count
   .item-group
+    .col-md-2.title= Lottery.human_attribute_name :candidates_count
+    .col-md-10= @lottery.candidates.count
+  .item-group
     .col-md-2.title= Lottery.human_attribute_name :drawn
     .col-md-10= t("terms.choices.drawn.#{@lottery.drawn? ? 'true' : 'false'}")
 
