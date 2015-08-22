@@ -37,6 +37,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'haml-rails'
 gem 'font-awesome-rails'
+gem 'rails-reveal-js'
 
 group :development, :test do
   gem 'pry-rails'
