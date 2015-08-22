@@ -36,6 +36,7 @@ ja:
       lottery_office: 抽選所
       new_target: "%{model_name}の新規登録"
       show_target: "%{model_name}「%{target}」の詳細"
+      winners_presentation: 抽選結果発表
     operations:
       create: 登録
       draw: 抽選する

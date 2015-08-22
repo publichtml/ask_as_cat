@@ -1,0 +1,7 @@
+.reveal
+  .slides
+    %section
+      %h1= t("terms.titles.winners_presentation")
+    - @winners.each do |winner|
+      %section
+        %h2= winner.name
