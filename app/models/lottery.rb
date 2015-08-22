@@ -15,4 +15,10 @@ class Lottery < ActiveRecord::Base
       update!(drawn: true)
     end
   end
+
+  def draw
+    draw!
+  rescue
+    false
+  end
 end
