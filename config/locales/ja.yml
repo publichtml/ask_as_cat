@@ -21,6 +21,7 @@ ja:
   messages:
     are_you_sure?: 削除してよろしいですか?
     created: 登録しました。
+    drawed: 抽選しました。
     destroyed: 削除しました。
     has_errors: エラーがあります。
     updated: 更新しました。
@@ -35,6 +36,7 @@ ja:
       show_target: "%{model_name}「%{target}」の詳細"
     operations:
       create: 登録
+      draw: 抽選する
       destroy: 削除
       edit: 編集
       index: 一覧
