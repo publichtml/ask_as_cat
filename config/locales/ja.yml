@@ -23,6 +23,7 @@ ja:
     created: 登録しました。
     drawed: 抽選しました。
     destroyed: 削除しました。
+    failed: 処理に失敗しました。
     has_errors: エラーがあります。
     updated: 更新しました。
   terms:

@@ -39,11 +39,13 @@ class LotteriesController < ApplicationController
   end
 
   def draw
-    if @lottery.draw
-      redirect_to lottery_path(@lottery), notice: I18n.t('messages.drawed')
-    else
-      render :show
-    end
+    flash =
+      if @lottery.draw
+        { notice: I18n.t('messages.drawed') }
+      else
+        { alert: I18n.t('messages.failed') }
+      end
+    redirect_to lottery_path(@lottery), flash: flash
   end
 
   private
