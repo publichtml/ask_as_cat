@@ -3,10 +3,10 @@
 .table-wrapper
   %table.table.table-striped
     %thead
-      %th= Candidate.human_attribute_name :number
+      %th.number= Candidate.human_attribute_name :number
       %th= Candidate.human_attribute_name :name
     %tbody
       - @winners.each.with_index(1) do |candidate, index|
         %tr
-          %th= index
+          %th.number= index
           %td= candidate.name

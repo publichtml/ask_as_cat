@@ -6,14 +6,14 @@
 
     %table.table.table-striped
       %thead
-        %th= Candidate.human_attribute_name :number
+        %th.number= Candidate.human_attribute_name :number
         %th= Candidate.human_attribute_name :name
         %th= Candidate.human_attribute_name :weight
         %th= t('terms.operations.destroy')
       %tbody
         = f.fields_for :candidates do |candidate|
           %tr
-            %th= candidate.index + 1
+            %th.number= candidate.index + 1
             %td= candidate.text_field :name, class: 'form-control'
             %td= candidate.select :weight, Candidate.weight_choices, {}, { class: 'form-control' }
             %td= candidate.check_box :_destroy, { class: 'form-control' }
