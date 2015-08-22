@@ -1,5 +1,5 @@
 class LotteriesController < ApplicationController
-  before_action :set_lottery, only: [:edit, :update, :show, :destroy]
+  before_action :set_lottery, only: [:edit, :update, :show, :destroy, :draw]
 
   def index
     @lotteries = Lottery.all
@@ -38,6 +38,14 @@ class LotteriesController < ApplicationController
     redirect_to lotteries_path, notice: I18n.t('messages.destroyed')
   end
 
+  def draw
+    if @lottery.draw
+      redirect_to lottery_candidates_winners_path(@lottery), notice: I18n.t('messages.drawed')
+    else
+      redirect_to lottery_path(@lottery), alert: I18n.t('messages.failed')
+    end
+  end
+
   private
 
   def lottery_params
@@ -45,6 +53,6 @@ class LotteriesController < ApplicationController
   end
 
   def set_lottery
-    @lottery = Lottery.find(params[:id])
+    @lottery = Lottery.find(params[:id] || params[:lottery_id])
   end
 end

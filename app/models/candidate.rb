@@ -1,10 +1,15 @@
 class Candidate < ActiveRecord::Base
   WEIGHTS = I18n.t('terms.choices.weight').keys.freeze
 
-  default_scope { order(:id) }
+  belongs_to :lottery
+
 
   validates :name, presence: true, length: { maximum: 255 }, uniqueness: { scope: [:lottery_id] }
   validates :weight, presence: true, inclusion: { in: WEIGHTS }
+
+  default_scope { order(:id) }
+
+  scope :winners, -> { where(winner: true) }
 
   class << self
     def human_weight(weight)

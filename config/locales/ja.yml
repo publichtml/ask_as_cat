@@ -8,7 +8,9 @@ ja:
         name: 名前
         number: No.
         weight: 当たりやすさ
+        winner: 当選者
       lottery:
+        candidates_count: 候補者数
         drawn: 抽選済
         name: 名前
         winners_count: 当選数
@@ -20,7 +22,9 @@ ja:
   messages:
     are_you_sure?: 削除してよろしいですか?
     created: 登録しました。
+    drawed: 抽選しました。
     destroyed: 削除しました。
+    failed: 処理に失敗しました。
     has_errors: エラーがあります。
     updated: 更新しました。
   terms:
@@ -34,6 +38,7 @@ ja:
       show_target: "%{model_name}「%{target}」の詳細"
     operations:
       create: 登録
+      draw: 抽選する
       destroy: 削除
       edit: 編集
       index: 一覧

@@ -17,6 +17,10 @@ class CandidatesController < ApplicationController
     end
   end
 
+  def winners
+    @winners = @lottery.candidates.winners
+  end
+
   private
 
   def candidates_params

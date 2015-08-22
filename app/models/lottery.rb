@@ -4,4 +4,21 @@ class Lottery < ActiveRecord::Base
 
   has_many :candidates, dependent: :destroy
   accepts_nested_attributes_for :candidates, allow_destroy: true, reject_if: proc { |attrs| attrs['id'].blank? && attrs['name'].blank? }
+
+  def draw!
+    winners = LotteryDrawer.draw(candidates, winners_count)
+
+    Lottery.transaction do
+      winners.each do |winner|
+        winner.update!(winner: true)
+      end
+      update!(drawn: true)
+    end
+  end
+
+  def draw
+    draw!
+  rescue
+    false
+  end
 end

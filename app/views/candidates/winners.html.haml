@@ -1,0 +1,12 @@
+%h1= t('terms.titles.index_of_target_of_parent', model_name: Candidate.human_attribute_name(:winner), parent: @lottery.name)
+
+.table-wrapper
+  %table.table.table-striped
+    %thead
+      %th.number= Candidate.human_attribute_name :number
+      %th= Candidate.human_attribute_name :name
+    %tbody
+      - @winners.each.with_index(1) do |candidate, index|
+        %tr
+          %th.number= index
+          %td= candidate.name
