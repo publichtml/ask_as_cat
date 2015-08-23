@@ -3,5 +3,5 @@
     %section
       %h1 抽選完了
     - @winners.each do |winner|
-      %section
+      %section{ data: { background: "/assets/cats/#{cycle("2494974941_3e115fc42f_b.jpg", "2187242989_2eacb23b1e_b.jpg")}" } }
         %h2= winner.name
