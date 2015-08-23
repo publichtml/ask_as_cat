@@ -3,9 +3,10 @@
 .reveal
   .slides
     %section
-      %h1 抽選完了
+      %h1 抽選結果発表
     - @winners.each do |winner|
       - slide = slide_contents[cycle(slide_indexs).to_i]
       - filename = slide["filename"]
+      - message = slide["message"].gsub("{{name}}", winner.name)
       %section{ data: { background: "/assets/cats/#{filename}" } }
-        %h2= winner.name
+        %h2= message
