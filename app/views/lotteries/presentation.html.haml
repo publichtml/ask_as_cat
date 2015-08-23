@@ -1,7 +1,11 @@
+- slide_contents = YAML.load_file("#{Rails.root}/config/slide_contents.yml")["slide_contents"]
+- slide_indexs = 0...slide_contents.count
 .reveal
   .slides
     %section
       %h1 抽選完了
     - @winners.each do |winner|
-      %section{ data: { background: "/assets/cats/#{cycle("2494974941_3e115fc42f_b.jpg", "2187242989_2eacb23b1e_b.jpg")}" } }
+      - slide = slide_contents[cycle(slide_indexs).to_i]
+      - filename = slide["filename"]
+      %section{ data: { background: "/assets/cats/#{filename}" } }
         %h2= winner.name
