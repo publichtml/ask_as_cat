@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :lotteries do
     patch 'draw'
+    get 'presentation'
     controller :candidates do
       get 'candidates', action: 'index'
       get 'candidates/winners', action: 'winners'
