@@ -1,0 +1,19 @@
+!!!
+%html{ lang: "ja" }
+  %head
+    %title= t('app.name')
+    = stylesheet_link_tag    'reveal'
+    = stylesheet_link_tag    'theme/black'
+    = javascript_include_tag 'reveal'
+    = csrf_meta_tags
+  %body
+    = yield
+
+  :javascript
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+      transition: 'slide' // none/fade/slide/convex/concave/zoom
+    });

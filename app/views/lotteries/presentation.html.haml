@@ -1,3 +1,7 @@
-%ul
-  - @winners.each do |winner|
-    %li= winner.name
+.reveal
+  .slides
+    %section
+      %h1 抽選完了
+    - @winners.each do |winner|
+      %section
+        %h2= winner.name

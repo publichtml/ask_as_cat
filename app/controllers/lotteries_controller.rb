@@ -48,6 +48,7 @@ class LotteriesController < ApplicationController
 
   def presentation
     @winners = @lottery.winners
+    render layout: "slideshow"
   end
 
   private
