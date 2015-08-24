@@ -1,5 +1,5 @@
 - slide_contents = YAML.load_file("#{Rails.root}/config/slide_contents.yml")["slide_contents"]
-- slide_indexs = 0...slide_contents.count
+- slide_indexs = (0...slide_contents.count).to_a.shuffle
 .reveal
   .slides
     %section
