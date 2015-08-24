@@ -99,6 +99,7 @@ ja:
   errors:
     format: "%{attribute}%{message}"
     messages:
+      already_drawed: 既に抽選済みです。
       accepted: を受諾してください
       blank: を入力してください
       present: は入力しないでください

@@ -8,6 +8,11 @@ class Lottery < ActiveRecord::Base
   delegate :winners, to: :candidates
 
   def draw!
+    if drawn
+      errors.add(:base, I18n.t("errors.messages.already_drawed"))
+      raise ActiveRecord::RecordInvalid.new(self)
+    end
+
     winners = LotteryDrawer.draw(candidates, winners_count)
 
     Lottery.transaction do
