@@ -24,3 +24,5 @@
   = link_to t('terms.operations.index'), lotteries_path
 %p
   = link_to t('terms.titles.index', model_name: Candidate.model_name.human), lottery_candidates_path(@lottery)
+%p
+  = link_to t('terms.titles.index', model_name: Candidate.human_attribute_name(:winner)), lottery_candidates_winners_path(@lottery)

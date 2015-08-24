@@ -1,5 +1,5 @@
 class LotteriesController < ApplicationController
-  before_action :set_lottery, only: [:edit, :update, :show, :destroy, :draw]
+  before_action :set_lottery, only: [:edit, :update, :show, :destroy, :draw, :presentation]
 
   def index
     @lotteries = Lottery.all
@@ -40,10 +40,15 @@ class LotteriesController < ApplicationController
 
   def draw
     if @lottery.draw
-      redirect_to lottery_candidates_winners_path(@lottery), notice: I18n.t('messages.drawed')
+      redirect_to lottery_presentation_path(@lottery), notice: I18n.t('messages.drawed')
     else
       redirect_to lottery_path(@lottery), alert: I18n.t('messages.failed')
     end
+  end
+
+  def presentation
+    @winners = @lottery.winners
+    render layout: "slideshow"
   end
 
   private
