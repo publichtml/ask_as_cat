@@ -14,8 +14,13 @@
     .col-md-2.title= Lottery.human_attribute_name :drawn
     .col-md-10= t("terms.choices.drawn.#{@lottery.drawn? ? 'true' : 'false'}")
 
-%p
-  = link_to t('terms.operations.draw'), lottery_draw_path(@lottery), method: :patch, class: 'btn btn-primary'
+- if @lottery.drawn
+  %p
+    = link_to t('terms.operations.presentation'), lottery_presentation_path(@lottery), class: 'btn btn-success'
+- else
+  %p
+    = link_to t('terms.operations.draw'), lottery_draw_path(@lottery), method: :patch, class: 'btn btn-primary'
+
 %p
   = link_to t('terms.operations.edit'), edit_lottery_path(@lottery)
 %p
