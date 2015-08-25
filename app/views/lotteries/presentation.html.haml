@@ -8,5 +8,6 @@
       - slide = slide_contents[cycle(slide_indexs).to_i]
       - filename = slide["filename"]
       - message = slide["message"].gsub("{{name}}", winner.name)
-      %section{ data: { background: "/assets/cats/#{filename}" } }
+      - text_position = slide["text_position"].presence || "top"
+      %section{ data: { background: "/assets/cats/#{filename}" }, class: text_position }
         %h2= message
