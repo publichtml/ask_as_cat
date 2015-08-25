@@ -2,7 +2,7 @@
 - slide_indexs = (0...slide_contents.count).to_a.shuffle
 .reveal
   .slides
-    %section
+    %section.center
       %h1= t("terms.titles.presentation")
     - @winners.each do |winner|
       - slide = slide_contents[cycle(slide_indexs).to_i]
