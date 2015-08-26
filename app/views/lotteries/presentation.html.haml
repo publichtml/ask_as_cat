@@ -16,7 +16,7 @@
       %h2= t("terms.titles.congratulations")
       %table
         %tbody
-          - ((@winners.count + 1)/ 2).ceil.times do |index|
+          - 0.step(@winners.count - 1, 2) do |index|
             %tr
               %td= @winners[index].name
               %td= @winners[index + 1].try(:name)
