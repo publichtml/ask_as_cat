@@ -29,6 +29,7 @@ ja:
     updated: 更新しました。
   terms:
     titles:
+      congratulations: 当選おめでとうございます!!
       edit_target: "%{model_name}「%{target}」の編集"
       edit_target_of_parent: "%{parent}の%{model_name}の編集"
       index: "%{model_name}の一覧"
