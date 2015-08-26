@@ -10,7 +10,7 @@
       - message = slide["message"].gsub("{{name}}", winner.name)
       - text_position = slide["text_position"].presence || "top"
       - text_color = slide["text_color"].presence || "white"
-      %section{ data: { background: "/assets/cats/#{filename}" }, class: text_position }
+      %section{ data: { background: asset_path("cats/#{filename}") }, class: text_position }
         %h2{ class: text_color }= message
     %section
       %h2= t("terms.titles.congratulations")
