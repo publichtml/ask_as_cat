@@ -2,45 +2,60 @@ slide_contents:
   - filename: 2494974941_3e115fc42f_b.jpg
     message: "{{name}}さんのLT、聞きたいなぁ"
     text_position: bottom
+    text_color: white
   - filename: 2187242989_2eacb23b1e_b.jpg
     message: "{{name}}さん、ちょっとLTしてくれないかね?"
     text_position: bottom
+    text_color: white
   - filename: 7765050482_d261f1a0f7_b.jpg
     message: "{{name}}さん、LTしてくれないと引っかくぞ〜?"
     text_position: top
+    text_color: white
   - filename: 8544790758_393427f0c3_k.jpg
     message: "{{name}}さんのLTどこ?"
     text_position: top
+    text_color: white
   - filename: 6672150457_420d61007d_b.jpg
     message: "{{name}}さんのLT、待ちくたびれた..."
     text_position: top
+    text_color: white
   - filename: 6866446860_2efb9b7e7c_k.jpg
     message: "{{name}}さんのLT聞きに来たよ!"
     text_position: bottom
+    text_color: white
   - filename: 1460135828_2afcc1cf35_b.jpg
     message: "{{name}}さん、同情するならLTをくれ"
     text_position: bottom
+    text_color: white
   - filename: 256249222_f4c8375c29_b.jpg
     message: "{{name}}さんLT、きっと素敵だろうなぁ…"
     text_position: bottom
+    text_color: white
   - filename: 4154543904_6e2428c421_b.jpg
     message: "{{name}}さんのLTまだ〜?"
     text_position: bottom
+    text_color: white
   - filename: 560380352_8b58b0611c_o.jpg
     message: "{{name}}さん、LT!! LT!!"
     text_position: bottom
+    text_color: white
   - filename: 3970746529_4942479359_b.jpg
     message: "{{name}}さん、LTしてくれないと食べちゃうよ?"
     text_position: top
+    text_color: white
   - filename: 3426033125_455e921468_b.jpg
     message: "{{name}}さん、LTしてくれないの…?"
     text_position: top
+    text_color: white
   - filename: 8117203851_6f8eb22a89_k.jpg
     message: "{{name}}さん、なにとぞ我が輩にLTを…"
     text_position: bottom
+    text_color: white
   - filename: 166632865_cca01e7aa9_o.jpg
     message: "{{name}}さん、ちょっと暇なんでLTしてくれる?"
     text_position: bottom
+    text_color: gray
   - filename: 7905697728_efe99fd1ae_k.jpg
     message: "{{name}}さんのLT、待ってる!!"
     text_position: top
+    text_color: white
