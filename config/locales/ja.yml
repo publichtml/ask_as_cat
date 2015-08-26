@@ -35,7 +35,7 @@ ja:
       index_of_target_of_parent: "%{parent}の%{model_name}一覧"
       lottery_office: 抽選所
       new_target: "%{model_name}の新規登録"
-      presentation: 抽選結果発表
+      presentation_of_target: 「%{target}」の抽選結果発表
       show_target: "%{model_name}「%{target}」の詳細"
     operations:
       create: 登録

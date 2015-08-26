@@ -3,7 +3,7 @@
 .reveal
   .slides
     %section.center
-      %h1= t("terms.titles.presentation")
+      %h1= t("terms.titles.presentation_of_target", target: @lottery.name)
     - @winners.each do |winner|
       - slide = slide_contents[cycle(slide_indexs).to_i]
       - filename = slide["filename"]
