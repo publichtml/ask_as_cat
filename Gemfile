@@ -52,3 +52,6 @@ group :development, :test do
   gem 'factory_girl_rails'
 end
 
+group :pruduction do
+  gem 'rails_12factor'
+end
