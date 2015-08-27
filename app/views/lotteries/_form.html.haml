@@ -7,6 +7,9 @@
       .col-md-2.label-wrapper= f.label :name
       .col-md-10= f.text_field :name, class: 'form-control'
     .form-group
+      .col-md-2.label-wrapper= f.label :message_type
+      .col-md-10= f.select :message_type, Lottery.message_type_choices, {}, { class: 'form-control' }
+    .form-group
       .col-md-2.label-wrapper= f.label :winners_count
       .col-md-10= f.number_field :winners_count, class: 'form-control'
     .col-md-12

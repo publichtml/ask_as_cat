@@ -7,7 +7,7 @@
     - @winners.each do |winner|
       - slide = slide_contents[cycle(slide_indexs).to_i]
       - filename = slide["filename"]
-      - message = slide["message"].gsub("{{name}}", winner.name)
+      - message = slide["message"][@lottery.message_type].gsub("{{name}}", winner.name)
       - text_position = slide["text_position"].presence || "top"
       - text_color = slide["text_color"].presence || "white"
       %section{ data: { background: asset_path("cats/#{filename}") }, class: text_position }

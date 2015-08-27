@@ -4,12 +4,14 @@
   %table.table.table-striped
     %thead
       %th= Lottery.human_attribute_name :name
+      %th= Lottery.human_attribute_name :message_type
       %th= Lottery.human_attribute_name :winners_count
       %th= Lottery.human_attribute_name :drawn
     %tbody
       - @lotteries.each do |lottery|
         %tr
           %td= link_to lottery.name, lottery_path(lottery)
+          %td= lottery.human_message_type
           %td= lottery.winners_count
           %td= t("terms.choices.drawn.#{lottery.drawn? ? 'true' : 'false'}")
 

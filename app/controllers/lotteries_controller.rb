@@ -55,7 +55,7 @@ class LotteriesController < ApplicationController
   private
 
   def lottery_params
-    params.require(:lottery).permit(:name, :winners_count)
+    params.require(:lottery).permit(:name, :message_type, :winners_count)
   end
 
   def set_lottery

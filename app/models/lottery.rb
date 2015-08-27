@@ -1,11 +1,28 @@
 class Lottery < ActiveRecord::Base
+  MESSAGE_TYPES = I18n.t('terms.choices.message_type').keys.map(&:to_s).freeze
+
   validates :name, presence: true, length: { maximum: 255 }
   validates :winners_count, presence: true, numericality: { only_integer: true, greater_than: 0, allow_blank: true }
+  validates :message_type, presence: true, inclusion: { in: MESSAGE_TYPES }
 
   has_many :candidates, dependent: :destroy
   accepts_nested_attributes_for :candidates, allow_destroy: true, reject_if: proc { |attrs| attrs['id'].blank? && attrs['name'].blank? }
 
   delegate :winners, to: :candidates
+
+  class << self
+    def human_message_type(message_type)
+      I18n.t("terms.choices.message_type")[message_type.to_sym]
+    end
+
+    def message_type_choices
+      I18n.t('terms.choices.message_type').invert
+    end
+  end
+
+  def human_message_type
+    self.class.human_message_type(message_type)
+  end
 
   def draw!
     if drawn

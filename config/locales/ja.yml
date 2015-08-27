@@ -12,6 +12,7 @@ ja:
       lottery:
         candidates_count: 候補者数
         drawn: 抽選済
+        message_type: 抽選タイプ
         name: 名前
         winners_count: 当選数
       lottery/candidates:
@@ -51,6 +52,9 @@ ja:
       drawn:
         "true": 済
         "false": 未
+      message_type:
+        lt: LT抽選
+        congratulations: ふつうの抽選
       weight:
         1: ふつう
         2: 当たりやすい

@@ -5,6 +5,9 @@
     .col-md-2.title= Lottery.human_attribute_name :name
     .col-md-10= @lottery.name
   .item-group
+    .col-md-2.title= Lottery.human_attribute_name :message_type
+    .col-md-10= @lottery.human_message_type
+  .item-group
     .col-md-2.title= Lottery.human_attribute_name :winners_count
     .col-md-10= @lottery.winners_count
   .item-group
