@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       put 'candidates', action: 'update'
       get 'candidates/edit', action: 'edit'
       get 'candidates/bulk_edit', action: 'bulk_edit'
+      put 'candidates/bulk_update', action: 'bulk_update'
     end
   end
 end

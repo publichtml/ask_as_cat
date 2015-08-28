@@ -1,6 +1,8 @@
 class Lottery < ActiveRecord::Base
   MESSAGE_TYPES = I18n.t('terms.choices.message_type').keys.map(&:to_s).freeze
 
+  attr_accessor :candidates_csv
+
   validates :name, presence: true, length: { maximum: 255 }
   validates :winners_count, presence: true, numericality: { only_integer: true, greater_than: 0, allow_blank: true }
   validates :message_type, presence: true, inclusion: { in: MESSAGE_TYPES }
