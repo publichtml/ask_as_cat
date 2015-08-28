@@ -40,7 +40,7 @@ class LotteriesController < ApplicationController
 
   def draw
     if @lottery.draw
-      redirect_to lottery_presentation_path(@lottery), notice: I18n.t('messages.drawed')
+      redirect_to lottery_presentation_path(@lottery)
     else
       message = "#{I18n.t('messages.failed')}\n#{@lottery.errors.full_messages.join("\n")}"
       redirect_to lottery_path(@lottery), alert: message
