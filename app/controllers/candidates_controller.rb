@@ -17,7 +17,7 @@ class CandidatesController < ApplicationController
     end
   end
 
-  def bulk_edit
+  def import_form
   end
 
   def winners

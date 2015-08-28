@@ -40,11 +40,11 @@ ja:
       presentation_of_target: 「%{target}」の抽選結果発表
       show_target: "%{model_name}「%{target}」の詳細"
     operations:
-      bulk_edit: 一括編集
       create: 登録
       draw: 抽選する
       destroy: 削除
       edit: 編集
+      import: 一括編集
       index: 一覧
       new: 新規登録
       presentation: 抽選結果発表
