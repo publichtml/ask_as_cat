@@ -49,6 +49,7 @@ ja:
       index: 一覧
       new: 新規登録
       presentation: 抽選結果発表
+      redraw: 追加抽選する
       update: 更新
     choices:
       drawn:
