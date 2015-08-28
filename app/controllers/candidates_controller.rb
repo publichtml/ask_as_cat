@@ -17,6 +17,9 @@ class CandidatesController < ApplicationController
     end
   end
 
+  def bulk_edit
+  end
+
   def winners
     @winners = @lottery.candidates.winners
   end
