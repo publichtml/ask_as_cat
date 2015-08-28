@@ -29,11 +29,6 @@ class Lottery < ActiveRecord::Base
   end
 
   def draw!
-    if drawn
-      errors.add(:base, I18n.t("errors.messages.already_drawed"))
-      raise ActiveRecord::RecordInvalid.new(self)
-    end
-
     winners = LotteryDrawer.draw(candidates, winners_count)
 
     Lottery.transaction do
