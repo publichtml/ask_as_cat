@@ -1,5 +1,6 @@
 class Candidate < ActiveRecord::Base
   WEIGHTS = I18n.t('terms.choices.weight').keys.freeze
+  DEFAULT_WEIGHT = 1
 
   belongs_to :lottery
 

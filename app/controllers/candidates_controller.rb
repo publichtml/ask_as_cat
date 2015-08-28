@@ -20,6 +20,15 @@ class CandidatesController < ApplicationController
   def import_form
   end
 
+  def import
+    csv = candidates_import_params[:candidates_csv]
+    if @lottery.import(csv)
+      redirect_to lottery_candidates_path(lottery: @lottery), notice: I18n.t('messages.imported')
+    else
+      render :import_form
+    end
+  end
+
   def winners
     @winners = @lottery.candidates.winners
   end
@@ -28,6 +37,10 @@ class CandidatesController < ApplicationController
 
   def candidates_params
     params.require(:lottery).permit(candidates_attributes: [:id, :name, :weight, :_destroy])
+  end
+
+  def candidates_import_params
+    params.require(:lottery).permit(:candidates_csv)
   end
 
   def set_lottery
