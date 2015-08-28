@@ -51,7 +51,7 @@ class Lottery < ActiveRecord::Base
   end
 
   def import!(csv)
-    self.candidates_csv = csv
+    self.candidates_csv = csv  # 検証エラー時の表示用などのためにセットだけしておく
     Lottery.transaction do
       CSV.parse(csv) do |row|
         name, weight = row
