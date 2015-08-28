@@ -13,4 +13,6 @@
           %td= candidate.name
           %td= candidate.human_weight
 
-%p= link_to t('terms.operations.edit'), lottery_candidates_edit_path(@lottery)
+.table-wrapper
+  %ul
+    %li= link_to t('terms.operations.edit'), lottery_candidates_edit_path(@lottery)
