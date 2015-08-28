@@ -4,7 +4,6 @@ class Candidate < ActiveRecord::Base
 
   belongs_to :lottery
 
-
   validates :name, presence: true, length: { maximum: 255 }, uniqueness: { scope: [:lottery_id] }
   validates :weight, presence: true, inclusion: { in: WEIGHTS }
 
