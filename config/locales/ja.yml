@@ -27,6 +27,7 @@ ja:
     destroyed: 削除しました。
     failed: 処理に失敗しました。
     has_errors: エラーがあります。
+    imported: 一括更新しました。
     updated: 更新しました。
   terms:
     titles:
@@ -44,6 +45,7 @@ ja:
       draw: 抽選する
       destroy: 削除
       edit: 編集
+      import: 一括編集
       index: 一覧
       new: 新規登録
       presentation: 抽選結果発表

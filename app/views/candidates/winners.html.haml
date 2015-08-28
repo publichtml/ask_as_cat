@@ -10,3 +10,8 @@
         %tr
           %th.number= index
           %td= candidate.name
+
+.table-wrapper
+  .col-md-6
+    %ul
+      %li= link_to t('terms.titles.show_target', model_name: Lottery.model_name.human, target: @lottery.name), lottery_path(@lottery)

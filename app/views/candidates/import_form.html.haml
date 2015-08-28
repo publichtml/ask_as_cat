@@ -1,0 +1,10 @@
+%h1= t('terms.titles.edit_target_of_parent', model_name: Candidate.model_name.human, parent: @lottery.name)
+
+.form-wrapper
+  = form_for @lottery, url: lottery_candidates_import_path, method: :put do |f|
+    = render partial: 'shared/validation_errors', locals: { object: @lottery }
+
+    .form-group
+      .col-md-12= f.text_area :candidates_csv, class: 'form-control long-textarea'
+
+    .col-md-12= f.submit t('terms.operations.update'), class: 'btn btn-primary pull-right'

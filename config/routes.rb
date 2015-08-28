@@ -9,6 +9,8 @@ Rails.application.routes.draw do
       get 'candidates/winners', action: 'winners'
       put 'candidates', action: 'update'
       get 'candidates/edit', action: 'edit'
+      get 'candidates/import', action: 'import_form'
+      put 'candidates/import', action: 'import'
     end
   end
 end

@@ -1,5 +1,9 @@
+require "csv"
+
 class Lottery < ActiveRecord::Base
   MESSAGE_TYPES = I18n.t('terms.choices.message_type').keys.map(&:to_s).freeze
+
+  attr_accessor :candidates_csv
 
   validates :name, presence: true, length: { maximum: 255 }
   validates :winners_count, presence: true, numericality: { only_integer: true, greater_than: 0, allow_blank: true }
@@ -43,6 +47,29 @@ class Lottery < ActiveRecord::Base
   def draw
     draw!
   rescue
+    false
+  end
+
+  def import!(csv)
+    self.candidates_csv = csv  # 検証エラー時の表示用などのためにセットだけしておく
+    Lottery.transaction do
+      CSV.parse(csv) do |row|
+        name, weight = row
+        next if name.blank?
+        weight = weight.presence || Candidate::DEFAULT_WEIGHT
+
+        candidate = candidates.find_by(name: name) || candidates.build(name: name)
+        candidate.weight = weight.to_i
+        candidate.save!
+      end
+    end
+  end
+
+  def import(csv)
+    import!(csv)
+    true
+  rescue => e
+    errors.add(:base, e.record.errors.full_messages.join("\n"))
     false
   end
 end

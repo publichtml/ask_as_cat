@@ -24,13 +24,13 @@
   %p
     = link_to t('terms.operations.draw'), lottery_draw_path(@lottery), method: :patch, class: 'btn btn-primary'
 
-%p
-  = link_to t('terms.operations.edit'), edit_lottery_path(@lottery)
-%p
-  = link_to t('terms.operations.destroy'), lottery_path(@lottery), method: :delete, data: { confirm: t('messages.are_you_sure?') }
-%p
-  = link_to t('terms.operations.index'), lotteries_path
-%p
-  = link_to t('terms.titles.index', model_name: Candidate.model_name.human), lottery_candidates_path(@lottery)
-%p
-  = link_to t('terms.titles.index', model_name: Candidate.human_attribute_name(:winner)), lottery_candidates_winners_path(@lottery)
+.items-wrapper
+  .col-md-4
+    %ul
+      %li= link_to t('terms.operations.edit'), edit_lottery_path(@lottery)
+      %li= link_to t('terms.operations.destroy'), lottery_path(@lottery), method: :delete, data: { confirm: t('messages.are_you_sure?') }
+      %li= link_to t('terms.operations.index'), lotteries_path
+  .col-md-4
+    %ul
+      %li= link_to t('terms.titles.index', model_name: Candidate.model_name.human), lottery_candidates_path(@lottery)
+      %li= link_to t('terms.titles.index', model_name: Candidate.human_attribute_name(:winner)), lottery_candidates_winners_path(@lottery)
