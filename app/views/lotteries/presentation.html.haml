@@ -18,6 +18,7 @@
         %tbody
           - 0.step(@winners.count - 1, 2) do |index|
             %tr
-              %td= @winners[index].name
-              %td= @winners[index + 1].try(:name)
+              %td= "#{index + 1}. #{@winners[index].name}"
+              - if @winners[index + 1]
+                %td= "#{index + 2}. #{@winners[index + 1].try(:name)}"
 
