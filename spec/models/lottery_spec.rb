@@ -14,17 +14,5 @@ describe "Lottery" do
         end.to change { lottery.drawn }.from(false).to(true).and change { lottery.candidates.winners.count }.from(0).to(winners_count)
       end
     end
-
-    context "抽選済みのとき" do
-      let(:drawn) { true }
-
-      it "検証エラーとなる" do
-        expect do
-          lottery.draw
-        end.to_not change { lottery.drawn }.from(true)
-        expect(lottery.candidates.winners.count).to eq 0
-        expect(lottery.errors[:base].count).to eq 1
-      end
-    end
   end
 end

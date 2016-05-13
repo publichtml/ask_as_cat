@@ -28,24 +28,29 @@ class Lottery < ActiveRecord::Base
     self.class.human_message_type(message_type)
   end
 
-  def draw!
-    if drawn
-      errors.add(:base, I18n.t("errors.messages.already_drawed"))
-      raise ActiveRecord::RecordInvalid.new(self)
-    end
+  def redrawable?
+    winners_count > winners.count
+  end
 
-    winners = LotteryDrawer.draw(candidates, winners_count)
+  def draw!
+    lacked_winners_count = winners_count - winners.count
+    return if drawn && lacked_winners_count <= 0
+
+    rest_candidates = candidates.where(winner: false)
+
+    winners = LotteryDrawer.draw(rest_candidates, lacked_winners_count)
 
     Lottery.transaction do
       winners.each do |winner|
         winner.update!(winner: true)
       end
-      update!(drawn: true)
+      update!(drawn: true) unless drawn
     end
   end
 
   def draw
     draw!
+    true
   rescue
     false
   end

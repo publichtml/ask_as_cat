@@ -17,12 +17,11 @@
     .col-md-2.title= Lottery.human_attribute_name :drawn
     .col-md-10= t("terms.choices.drawn.#{@lottery.drawn? ? 'true' : 'false'}")
 
-- if @lottery.drawn
-  %p
-    = link_to t('terms.operations.presentation'), lottery_presentation_path(@lottery), class: 'btn btn-success'
-- else
-  %p
-    = link_to t('terms.operations.draw'), lottery_draw_path(@lottery), method: :patch, class: 'btn btn-primary'
+  %section
+    - if @lottery.drawn
+      = link_to t('terms.operations.presentation'), lottery_presentation_path(@lottery), class: 'btn btn-success'
+    - if !@lottery.drawn || @lottery.redrawable?
+      = link_to t("terms.operations.#{@lottery.drawn? ? "redraw" : "draw"}"), lottery_draw_path(@lottery), method: :patch, class: 'btn btn-primary'
 
 .items-wrapper
   .col-md-4
