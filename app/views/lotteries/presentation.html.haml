@@ -3,6 +3,10 @@
 .reveal
   .slides
     %section.center
+      %h1= link_to t("terms.operations.#{@lottery.drawn? ? "redraw" : "draw"}"), '#', class: 'btn navigate-right'
+    %section.center{ data: { autoslide: 4000 } }
+      %h1= fa_icon('spinner', class: 'fa-spin fa-3x fa-fw')
+    %section.center
       %h1= t("terms.titles.presentation_of_target", target: @lottery.name)
     - @winners.each do |winner|
       - slide = slide_contents[cycle(slide_indexs).to_i]

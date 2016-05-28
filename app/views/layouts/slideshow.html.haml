@@ -2,6 +2,7 @@
 %html{ lang: "ja" }
   %head
     %title= t('app.name')
+    = stylesheet_link_tag    'application', media: 'all'
     = stylesheet_link_tag    'reveal_customized'
     = javascript_include_tag 'reveal'
     = csrf_meta_tags
