@@ -10,7 +10,7 @@
         %h1= fa_icon('spinner', class: 'fa-spin fa-3x fa-fw')
     %section.center
       %h1= t("terms.titles.presentation_of_target", target: @lottery.name)
-    - @winners.each do |winner|
+    - @new_winners.each do |winner|
       - slide = slide_contents[cycle(slide_indexs).to_i]
       - filename = slide["filename"]
       - message = slide["message"][@lottery.message_type].gsub("{{name}}", winner.name)
@@ -22,9 +22,9 @@
       %h2= t("terms.titles.congratulations")
       %table
         %tbody
-          - 0.step(@winners.count - 1, 2) do |index|
+          - 0.step(@all_winners.count - 1, 2) do |index|
             %tr
-              %td= "#{index + 1}. #{@winners[index].name}"
-              - if @winners[index + 1]
-                %td= "#{index + 2}. #{@winners[index + 1].try(:name)}"
+              %td= "#{index + 1}. #{@all_winners[index].name}"
+              - if @all_winners[index + 1]
+                %td= "#{index + 2}. #{@all_winners[index + 1].try(:name)}"
 

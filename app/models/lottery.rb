@@ -36,6 +36,11 @@ class Lottery < ActiveRecord::Base
     candidates.maximum(:lot_number)
   end
 
+  def last_winners
+    return [] unless drawn?
+    candidates.where(lot_number: last_lot_number)
+  end
+
   def draw!
     lacked_winners_count = winners_count - winners.count
     return if drawn && lacked_winners_count <= 0
