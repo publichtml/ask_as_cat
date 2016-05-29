@@ -40,6 +40,7 @@ class LotteriesController < ApplicationController
 
   def draw
     if @lottery.draw
+      flash[:drawed_now] = true
       redirect_to lottery_presentation_path(@lottery)
     else
       message = "#{I18n.t('messages.failed')}\n#{@lottery.errors.full_messages.join("\n")}"
