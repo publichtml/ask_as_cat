@@ -32,6 +32,15 @@ class Lottery < ActiveRecord::Base
     winners_count > winners.count
   end
 
+  def last_lot_number
+    candidates.maximum(:lot_number)
+  end
+
+  def last_winners
+    return [] unless drawn?
+    candidates.where(lot_number: last_lot_number)
+  end
+
   def draw!
     lacked_winners_count = winners_count - winners.count
     return if drawn && lacked_winners_count <= 0
@@ -39,10 +48,11 @@ class Lottery < ActiveRecord::Base
     rest_candidates = candidates.where(winner: false)
 
     winners = LotteryDrawer.draw(rest_candidates, lacked_winners_count)
+    new_lot_number = last_lot_number.to_i + 1
 
     Lottery.transaction do
       winners.each do |winner|
-        winner.update!(winner: true)
+        winner.update!(winner: true, lot_number: new_lot_number)
       end
       update!(drawn: true) unless drawn
     end
