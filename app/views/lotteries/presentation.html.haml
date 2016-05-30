@@ -1,12 +1,9 @@
 - slide_contents = YAML.load_file("#{Rails.root}/config/slide_contents.yml")["slide_contents"]
 - slide_indexs = (0...slide_contents.count).to_a.shuffle
-- redrawed = @lottery.last_lot_number > 1
 .reveal
   .slides
     - if flash[:drawed_now]
-      %section.center
-        %h1= link_to t("terms.operations.#{ redrawed ? "redraw" : "draw"}"), '#', class: 'btn navigate-right'
-      %section.center{ data: { autoslide: 4000 } }
+      %section.center{ data: { autoslide: 3000 } }
         %h1= fa_icon('spinner', class: 'fa-spin fa-3x fa-fw')
     %section.center
       %h1= t("terms.titles.presentation_of_target", target: @lottery.name)
