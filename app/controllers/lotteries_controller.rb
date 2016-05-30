@@ -50,7 +50,7 @@ class LotteriesController < ApplicationController
 
   def presentation
     @all_winners = @lottery.winners
-    @new_winners = flash[:drawed_now] ?  @lottery.last_winners : @all_winners
+    @new_winners = flash[:drawed_now] ? @lottery.last_winners : @all_winners
 
     render layout: "slideshow"
   end
